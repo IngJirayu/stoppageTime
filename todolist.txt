@@ -1,0 +1,18 @@
+1.) login.php error handler
+
+2.) thai username?
+
+3.) error noComment handler ->viewtopic.php page
+
+4.) load more query(use load more for more things)
+
+5.) tags
+
+5.5) href tag page
+
+6.) index page
+
+7.) 
+
+
+infinity.) css the whole website

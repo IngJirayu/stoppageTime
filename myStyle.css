@@ -1,0 +1,964 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+button{
+    user-select: none;
+    cursor: pointer;
+}
+
+/*Nav Bar*/
+body {
+    z-index: -1;
+    background: rgb(235, 235, 235);
+    /*background-image: url("image/3.jpg");
+    backdrop-filter: blur(10px);*/
+}
+.header a{
+    color: rgb(255, 255, 255);
+    background-color: #041E42;
+}
+
+.header{
+    background-color: #041E42;
+    box-shadow: 1px 1px 4px 0 rgba(0, 20, 85, 0.1);
+    position: relative;
+    width: 100%;
+    z-index: 3;
+
+}
+.header ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    overflow: hidden;
+    background-color: rgb(0, 0, 0);
+}
+.header ul a{
+    display: block;
+    padding: 20px;
+    border-right: 1px solid #aaa;
+    text-decoration: none;
+}
+.header ul a:hover{
+    background-color: #2b4468;
+}
+.header .logo{
+    
+    display: inline-block;
+    font-size: 2em;
+    padding: 12px;
+    text-decoration: none;
+}
+.header .menu{
+    clear: both;
+    max-height: 0;
+    transition: max-height .2s ease-out
+}
+.header .menu-icon{
+    padding: 28px 20px;
+    position: relative;
+    float: right;
+    cursor: pointer;
+}
+.header .menu-icon .nav-icon{
+    background: rgb(255, 255, 255);
+    display: block;
+    height: 2px;
+    width: 18px;
+    position: relative;
+    transition: background .2s ease-out;
+}
+.header .menu-icon .nav-icon:before{
+    background: rgb(255, 255, 255);
+    content:"";
+    display: block;
+    height: 100%;
+    width: 100%;
+    position :absolute;
+    transition: all .2s ease-out;
+    top: 5px;
+}
+.header .menu-icon .nav-icon:after{
+    background: rgb(255, 255, 255);
+    content:"";
+    display: block;
+    height: 100%;
+    width: 100%;
+    position :absolute;
+    transition: all .2s ease-out;
+    top: -5px;
+}
+.header .menu-btn{
+    display: none;
+}
+.header .menu-btn:checked ~ .menu{
+    max-height: 240px;
+}
+.header .menu-btn:checked ~ .menu-icon .nav-icon{
+    background: transparent;
+}
+.header .menu-btn:checked ~ .menu-icon .nav-icon:before{
+    transform: rotate(-45deg);
+    top: 0;
+
+}
+.header .menu-btn:checked ~ .menu-icon .nav-icon:after{
+    transform: rotate(45deg);
+    top: 0;
+}
+@media (min-width: 48em){
+    .header{
+        display: fixed;
+    }
+    .header li{
+        float: left;
+    }
+    .header li a{
+        padding: 20px 30px;
+    }
+    .header .menu{
+        clear:none;
+        float: right;
+        max-height: none;
+    }
+    .header .menu-icon{
+        display: none;
+    }
+}
+
+/* new login/ signup ting*/
+
+section{
+    background-color: white;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+}
+
+section .imgBx{
+    position: relative;
+    width: 50%;
+    height: 100%;
+}
+section .imgBx:before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(225deg, rgb(78, 83, 78), rgb(253, 255, 248));
+    z-index: 1;
+    mix-blend-mode: screen;
+}
+
+section .imgBx img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+section .contextBx{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 100%;
+}
+
+section .contextBx .formBx{
+   width: 50%; 
+}
+section .contextBx .formBx h2{
+    color: #607d8b;
+    font-weight: 600;
+    font-size: 1.5em;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    border-bottom: 4px solid #ff4584;
+    display: inline-block;
+    letter-spacing: 1px;
+}
+
+section .contextBx .formBx .inputBx{
+    margin-bottom: 20px;
+}
+
+section .contextBx .formBx .inputBx span{
+    font-size: 16px;
+    margin-bottom: 5px;
+    display: inline-block;
+    color: #607d8b;
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+
+section .contextBx .formBx .inputBx input,button{
+    width: 100%;
+    padding: 10px 20px;
+    outline: none;
+    font-weight: 400;
+    border: 1px solid #607d8b;
+    font-size: 16px;
+    letter-spacing: 1px;
+    color: #607d8b;
+    background: transparent;
+    border-radius: 30px;
+}
+
+section .contextBx .formBx .inputBx button{
+    background: rgb(68, 73, 75);
+    color: #fff;
+    outline: none;
+    border: none;
+    font-weight: 500;
+    cursor: pointer;
+}
+section .contextBx .formBx .inputBx button:hover{
+    background: rgb(99, 106, 109);
+}
+
+section .contextBx .formBx .inputBx p{
+    color: #607d8b;
+}
+
+section .contextBx .formBx .inputBx p a{
+    color: #ff4584;
+}
+
+@media (max-width: 768px){
+    section .imgBx{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+    section .contextBx{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+    }
+    section .contextBx .formBx{
+        width: 100%;
+        padding: 40px;
+        background: rgb(255, 255, 255, 0.9);
+        margin: 50px;
+    }
+}
+/*Profile*/
+
+.wrapper{
+    display: grid;
+    grid-template-columns: 0.75fr minmax(0, 3fr) 0.75fr;
+    grid-template-rows: 45px 84px 100px 30px auto;
+    grid-gap: 1em;
+    margin: 1em;
+}
+.idBx{
+    border-radius: 10px;
+    background-color: rgb(0, 196, 170);
+    justify-self: end;
+    font-size: 35px;
+    padding-left: 8px;
+    padding-right: 8px;
+    color: white;
+}
+.nameBx{
+    font-size: 40px;
+    padding-left: 8px;
+    padding-right: 8px;
+    grid-column: 2/4;
+
+}
+.postStatBx{
+    border-radius: 10px;
+    font: 25px;
+    background-color: rgb(248, 248, 248);
+    grid-column: 2/3;
+    grid-row: 2/4;
+    display: grid;
+    grid-template-rows: 30px;
+    padding: 10px;
+    border: 2px solid black;
+}
+.postBx{
+    border-radius: 10px;
+    font: 25px;
+    background-color: rgb(248, 248, 248);
+    grid-column: 2/3;
+    grid-row: 5/6;
+    padding: 15px;
+    display: grid;
+    grid-template-columns: minmax(0 ,1fr);
+    grid-gap: 5px;
+    border: 2px solid black;
+}
+
+.postBx > div{
+    border:black 1px solid ;
+    padding: 10px;
+    word-wrap: break-word;
+}
+
+
+
+.postBx > div:hover{
+    background-color: rgb(196, 196, 196);
+    border:black 1px solid ;
+    padding: 10px;
+
+}
+
+.profilePic{
+    grid-column: 1/2;
+    grid-row: 2/4;
+    justify-self: end;
+}
+
+.postTitle{
+    padding-left: 15px;
+    border-radius: 10px;
+    grid-column: 2/3;
+    grid-row: 4/5;
+    background-color: rgb(248, 248, 248);
+    border: 2px solid rgb(0, 0, 0);
+}
+a.linkToPost{
+    display: block;
+    text-decoration: none;
+}
+a.linkToPost:hover{
+    text-decoration: underline;
+}
+button.logoutButton{
+    background-color: white;
+}
+button.logoutButton:hover{
+    background-color: rgb(160, 160, 160);
+    color: black;
+}
+
+@media (max-width: 48em){
+    .wrapper{
+        display: grid;
+        grid-template-columns:  minmax(0, 1fr) 200px 1fr;
+        grid-template-rows: 1fr 1fr 200px auto;
+        grid-gap: 1em;
+        margin: 1em;
+    } 
+    .idBx{
+        grid-row: 1/2;
+        grid-column: 1/4;
+        justify-self: center;
+        
+    }
+    .nameBx{
+        grid-column: 1/4;
+        grid-row: 2/3;
+        padding-left: 0px;
+        justify-self: center;
+    }
+    .profilePic{
+        grid-column: 2/3;
+        grid-row: 3/4;
+    }
+    .postStatBx{
+        grid-column: 1/4;
+        grid-row: 4/5;
+    }
+    .postTitle{
+        grid-column: 1/4;
+        grid-row: 5/6;
+    }
+    .postBx{
+        grid-column: 1/4;
+        grid-row: 6/7;
+    }
+    .logout{
+        grid-row: 7/8;
+        grid-column: 2/3;
+    }
+    
+}
+
+/* Make post*/
+.makePostWrapper{
+    background-color: white;
+    border-radius: 10px;
+    border: 2px solid rgb(0, 0, 0);
+    margin: 15px;
+    margin-left: 140px;
+    margin-right: 140px;
+    margin-top: 40px;
+    padding: 30px;
+    display: grid;
+    grid-gap: 5px;
+    grid-template-columns: 0.1fr 2fr 0.1fr;
+    grid-template-rows: 1fr 0.5fr 1fr 1fr 300px auto 1fr;
+}
+
+.inputBx{
+    border-radius: 10px;
+    grid-row: 1/2;
+    grid-column: 2/3;
+}
+.errorBx{
+    grid-row: 2/3;
+    grid-column: 2/3;
+    color: red;
+}
+.titleBx{
+    font-weight: bold;
+    grid-row: 3/4;
+    grid-column: 2/3;
+}
+.makePostBx{
+    grid-row: 4/5;
+    grid-column: 2/3;
+}
+.makeDetailBx{
+    font-weight: bold;
+    grid-row: 5/6;
+    grid-column: 2/3;
+}
+.tagBx{
+    border-radius: 5px;
+    grid-row: 6/7;
+    grid-column: 2/3;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 5px;
+    padding: 5px;
+    border: 1px solid black;
+    
+
+}
+.submitBx{
+    grid-row: 7/8;
+    grid-column: 2/3;
+}
+
+
+textarea{
+    padding: 8px;
+    border-radius: 5px;
+    resize: none;
+    width: 100%;
+    height: 90%;
+}
+.makePostInputBx{
+    width: 100%;
+    padding: 5px;
+    border-radius: 5px;
+}
+.tag{
+    padding: 5px;
+    user-select: none;
+}
+.tagBx label:hover{
+    background-color: rgb(202, 202, 202);
+}
+
+input[type="checkbox"]:checked + span {
+    font-weight: bold;
+}
+@media (max-width: 48em){
+    .makePostWrapper{
+        grid-template-columns: 0.1fr 3fr 0.1fr;
+        margin: 5px;
+    }
+    .tagBx{
+        grid-column: 1/4;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 5px;
+        padding: 5px;
+    }
+    .makeDetailBx{
+        grid-column: 1/4;
+    }
+    .inputBx{
+        grid-column: 1/4;
+    }
+    .titleBx{
+        grid-column: 1/4;
+    }
+    .makePostBx{
+        grid-column: 1/4;
+    }
+    
+}
+
+/*Viewtopic*/
+
+.viewTopicWrapper{
+    margin: 40px;
+    
+    display: grid;
+    grid-template-columns: 0.1fr 2fr 0.1fr;
+    grid-template-rows: minmax(200px ,auto) 110px auto 1fr auto 1fr;
+}
+
+.viewTopicBx{
+    border-radius: 6px;
+    white-space: pre-wrap;
+    grid-column: 2/3;
+    grid-row: 1/2;
+    border: 1px solid black;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: grid;
+    grid-template-rows: 2fr minmax(1fr, auto) 1fr 10px;
+    background-color: rgb(255, 255, 255);
+}
+.topicBx{
+    color: white;
+    background-color: #0d499c;
+    grid-row: 1/2;
+    height: 100%;
+    font-size: 20px;
+    word-break:break-all;
+    padding-top: 5px;
+    padding-left: 5px;
+}
+
+.detailBx{
+    padding-left: 5px;
+    padding-top: 5px;
+    grid-row: 2/3;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+.posterIdBx{
+    border-top-style: double;
+    grid-row: 3/4;
+    align-self: end;
+    font-weight: bold;
+    padding-left: 5px;
+}
+.dateBx{
+    grid-row: 4/5;
+    justify-self: end;
+    padding-right: 5px;
+}
+
+.viewTopicAd{
+    grid-column: 2/3;
+    grid-row: 2/3;
+    background-color: rgb(255, 255, 255);
+}
+
+.comments{
+    grid-column: 2/3;
+    grid-row: 3/4;
+    display: grid;
+    grid-gap: 15px;
+    grid-template-rows: auto;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.noCommentYet{
+    grid-column: 2/3;
+    grid-row: 2/3;
+    justify-self: center;
+}
+
+.individualComment{
+    border-radius: 10px;
+    background-color: rgb(255, 255, 255);
+    grid-column: 1/4;
+    border: 1px solid black;
+    min-height: 70px;
+    padding: 15px;
+    margin-top: 10px;
+    display: grid;
+    grid-template-rows: 1fr minmax(1fr, auto) 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+}
+.commentCount{
+    grid-column: 1/3;
+    font-weight: bold;
+    background-color: rgb(192, 192, 192);
+}
+
+.actualComment{
+    grid-column: 1/3;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    grid-row: 2/3;
+}
+.commenterIdBx{
+    grid-column: 1/3;
+    border-top-style: double;
+    grid-row: 3/4;
+    align-self: end;
+    font-weight: bold;
+}
+.commentDateBx{
+    grid-column: 1/3;
+    grid-row: 4/5;
+    justify-self: end;
+}
+
+
+.showMoreButton{
+    margin-top: 10px;
+    grid-column: 2/3;
+
+}
+.hiddenShowMoreButton{
+    grid-column: 1/4;
+    border: 1px solid black;
+    min-height: 70px;
+    padding: 15px;
+    margin-top: 10px;
+    visibility: hidden;
+
+}
+
+.makeComment{
+    grid-column: 2/3;
+    grid-row: 4/5; 
+    margin-bottom: 15px;
+}
+@media (max-width: 48em){
+
+    .viewTopicWrapper{
+        margin: 0px;
+        background-color: white;
+        display: grid;
+        grid-template-columns: 0.1fr 2fr 0.1fr;
+        grid-template-rows: minmax(200px ,auto) 300px auto 1fr auto 1fr;
+    }
+    .showMoreButton{
+        margin-top: 10px;
+        grid-column: 1/4;
+    
+    }
+    
+}
+
+/*Tag page*/
+.tagsWrapper{
+    display: grid;
+    grid-template-columns: 5% 90% 5%;
+    grid-template-rows: 110px 20px auto;
+    margin-top: 30px;
+}
+
+.tagPageTopAd{
+    grid-row: 1/2;
+    grid-column: 2/3;
+    background-color: white;
+}
+
+.allTags{
+    grid-row: 3/4;
+    grid-column: 2/3;
+    display: grid;
+    grid-template-rows: repeat(11, 70px) 70px;
+    grid-gap: 10px;
+}
+
+.individualTag{
+    border-radius: 10px;
+    border: 1px solid black;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    padding: 10px;
+    background: rgb(255, 255, 255);
+}
+.tagTitle{
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+a.individualTag:hover{
+    border: 3px solid black;
+}
+
+@media (max-width: 48em){
+    .tagsWrapper{
+        display: grid;
+        grid-template-columns: 0.1fr 2fr 0.1fr;
+        grid-template-rows: 300px 20px auto;
+        margin-top: 20px;
+    }
+    .allTags{
+        grid-row: 3/4;
+        grid-column: 2/3;
+        display: grid;
+        grid-template-rows: repeat(11, auto) 70px;
+        grid-gap: 10px;
+    }
+}
+
+/*individual tag page*/
+.individualTagPageWrapper{
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: 5% 90% 5%;
+    grid-template-rows: 110px 20px 110px auto;
+}
+.individualTagPageTopAd{
+    grid-column: 2/3;
+    grid-row: 1/2;
+    background-color: rgb(255, 255, 255);
+}
+.tagName{
+    grid-column: 2/3;
+    grid-row: 3/4;
+    font-weight: bold;
+    align-self: center;
+    justify-self: center;
+    font-size: 45px;
+}
+.allPostBx{
+    grid-column: 2/3;
+    grid-row: 4/5;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    grid-gap: 10px;
+    margin-bottom: 50px;
+}
+.linkToPostTag{
+    color: black;
+    overflow: hidden;
+    padding: 10px;
+    grid-column: 1/3;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    border-bottom: 0.5px solid rgb(112, 132, 168);
+    border-radius: 10px;
+    background-color: rgb(255, 255, 255);
+}
+.linkToPostTag:hover{
+    font-weight: bold;
+}
+@media (max-width: 48em){
+    .individualTagPageWrapper{
+        display: grid;
+        grid-template-columns: 0.1fr 2fr 0.1fr;
+        grid-template-rows: 300px 20px 110px auto;
+        margin-top: 20px;
+    }
+    .tagName{
+        font-size: 30px;
+    }
+}
+
+/*announcement page*/
+.announcementWrapper{
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: 5% 45% 45% 5%;
+    grid-template-rows: 150px auto;
+}
+.announcementHeader{
+    grid-column: 2/3;
+    grid-row: 1/2;
+    font-size: 45px;
+    font-weight: bold;
+    justify-self: center;
+    align-self: center;
+}
+.actualAnnouncement{
+    grid-column: 2/3;
+    grid-row: 2/3;
+}
+
+/*index page*/
+.indexWrapper{
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: 5% 90% 5%;
+    grid-template-rows: 110px 20px 110px auto;
+}
+.indexPageTopAd{
+    grid-column: 2/3;
+    grid-row: 1/2;
+    background-color: rgb(255, 255, 255);
+}
+.announcement{
+    border-radius: 5px;
+    grid-column: 2/3;
+    grid-row: 3/4;
+    border: 1px solid black;
+    background-color: rgb(255, 255, 255);
+
+}
+.announcementTitle{
+    background-color: rgb(0, 58, 112);
+    padding-bottom: 5px;
+    color: rgb(255, 123, 0);
+}
+.announcementLink{
+    padding: 10px;
+}
+
+.topTen{
+    margin-top: 25px;
+    margin-bottom: 50px;
+    grid-column: 2/3;
+    grid-row: 4/5;
+    display: grid;
+    grid-template-columns: 48% 4% 48% ;
+    grid-template-rows: repeat(6 200px);
+    overflow: hidden;
+    text-overflow: ellipsis; 
+    grid-row-gap: 50px;
+}
+
+.topTenTitle{
+    border-radius: 10px;
+    grid-column: 1/3;
+    padding-top: 5px;
+    padding-left: 5px;
+    background-color: rgb(0, 58, 112);
+    color: rgb(255, 123, 0);
+}
+
+.pinnedPost{
+    grid-column: 1/4;
+    grid-row: 1/2;
+    display: grid;
+    grid-template-rows: repeat(11, 50px);
+}
+.tenNewPremPost{
+    grid-column: 1/2;
+    grid-row: 2/3;
+    display: grid;
+    grid-template-rows: repeat(11, 50px);
+}
+.tenNewLaligaPost{
+    grid-column: 3/4;
+    grid-row: 2/3;
+    display: grid;
+    grid-template-rows: repeat(11, 50px);
+}
+.tenNewBundesPost{
+    grid-column: 1/2;
+    grid-row: 3/4;
+    display: grid;
+    grid-template-rows: repeat(11, 50px);
+}
+.tenNewSeriaAPost{
+    grid-column: 3/4;
+    grid-row: 3/4;
+    display: grid;
+    grid-template-rows: repeat(11, 50px);
+}
+.tenNewLigue1Post{
+    grid-column: 1/2;
+    grid-row: 4/5;
+    display: grid;
+    grid-template-rows: repeat(11, 50px);
+}
+.tenNewThaiLeaguePost{
+    grid-column: 3/4;
+    grid-row: 4/5;
+    display: grid;
+    grid-template-rows: repeat(11, 50px);
+}
+.tenNewUclPost{
+    grid-column: 1/2;
+    grid-row: 5/6;
+    display: grid;
+    grid-template-rows: repeat(11, 50px);
+}
+.tenNewThaiBallPost{
+    grid-column: 3/4;
+    grid-row: 5/6;
+    display: grid;
+    grid-template-rows: repeat(11, 50px);
+}
+.tenNewAnalyzePost{
+    grid-column: 1/2;
+    grid-row: 6/7;
+    display: grid;
+    grid-template-rows: repeat(11, 50px);
+}
+.tenNewNewsPost{
+    grid-column: 3/4;
+    grid-row: 6/7;
+    display: grid;
+    grid-template-rows: repeat(11, 50px);
+}
+.tenNewRumourPost{
+    grid-column: 1/2;
+    grid-row: 7/8;
+    display: grid;
+    grid-template-rows: repeat(11, 50px);
+}
+
+@media (max-width: 48em){
+    .indexWrapper{
+        grid-template-rows: 300px 20px 110px auto;
+    }
+
+    .tenNewPremPost{
+        grid-column: 1/4;
+        grid-row: 2/3;;
+    }
+    .tenNewLaligaPost{
+        grid-column: 1/4;
+        grid-row: 3/4;
+    }
+    .tenNewBundesPost{
+        grid-column: 1/4;
+        grid-row: 4/5;
+    }
+    .tenNewSeriaAPost{
+        grid-column: 1/4;
+        grid-row: 5/6;
+    }
+    .tenNewLigue1Post{
+        grid-column: 1/4;
+        grid-row: 6/7;
+    }
+    .tenNewThaiLeaguePost{
+        grid-column: 1/4;
+        grid-row: 7/8;
+    }
+    .tenNewUclPost{
+        grid-column: 1/4;
+        grid-row: 8/9;
+    }
+    .tenNewThaiBallPost{
+        grid-column: 1/4;
+        grid-row: 9/10;
+    }
+    .tenNewAnalyzePost{
+        grid-column: 1/4;
+        grid-row: 10/11;
+    }
+    .tenNewNewsPost{
+        grid-column: 1/4;
+        grid-row: 11/12;
+    }
+    .tenNewRumourPost{
+        grid-column: 1/4;
+        grid-row: 12/13;
+    }    
+}
+
+/* Footer */
+.footerBx{
+    padding: 50px;
+    background-color: #041E42;
+}

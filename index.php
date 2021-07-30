@@ -22,6 +22,8 @@ campaign
 
   <div class="announcementLink">
     <a href="announcement.php">ประกาศ:ยินดีต้อนรับ</a>
+    <a href="rules.php">ประกาศ:กฏกติกา</a>
+    <a href="contactUs.php">ติดต่อเรา</a>
   </div>
 
 </div>

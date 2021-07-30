@@ -130,7 +130,7 @@ $count = 0;
 
   <?php
   if (!isset($_SESSION['userUid'])) {
-    echo 'มีความเห็น? อยากแสดงความคิดเห็นต้อง<a href="login.php">เข้าสู่ระบบ!</a>';
+    echo '<a href="login.php">เข้าสู่ระบบ!</a>';
   } else { ?>
 
     <form action="includes/comment.inc.php" method="post">

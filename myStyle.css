@@ -767,27 +767,32 @@ a.individualTag:hover{
     margin-top: 20px;
     display: grid;
     grid-template-columns: 5% 45% 45% 5%;
-    grid-template-rows: 150px auto;
-}
-.announcementHeader{
-    grid-column: 2/3;
-    grid-row: 1/2;
-    font-size: 45px;
-    font-weight: bold;
-    justify-self: center;
+    grid-template-rows: minmax(50vh, auto);
     align-self: center;
 }
-.actualAnnouncement{
-    grid-column: 2/3;
-    grid-row: 2/3;
+.announcementSecondWrapper{
+    grid-column: 2/4;
+    
+    background-color: white;
 }
+.announcementHeader{
+    padding: 15px;
+    font-size: 45px;
+    font-weight: bold;
+}
+.announcementText{
+    text-align: justify;
+    text-justify: inter-word;
+    padding: 15px;
+}
+
 
 /*index page*/
 .indexWrapper{
     margin-top: 30px;
     display: grid;
     grid-template-columns: 5% 90% 5%;
-    grid-template-rows: 110px 20px 110px auto;
+    grid-template-rows: 110px 20px auto auto;
 }
 .indexPageTopAd{
     grid-column: 2/3;
@@ -808,6 +813,9 @@ a.individualTag:hover{
     color: rgb(255, 123, 0);
 }
 .announcementLink{
+    display: grid;
+    grid-row: auto;
+    grid-gap: 10px;
     padding: 10px;
 }
 

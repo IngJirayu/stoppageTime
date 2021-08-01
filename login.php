@@ -9,43 +9,50 @@ if (isset($_SESSION['userUid'])) {
 <main>
 
 <?php 
+        $error = ' ';
         if (isset($_GET['signup']) == "success") {
-          echo '<p> Sign up done, now log the fuck in!</p>';
+            $error = "sign up successful now pls log in";
         }
         ?>
+
+<form action="includes/login.inc.php" method="post">
+<div class="authenticationWrapper">
+    <div class="authenticationLogo">
+        <img src="image/default profile pic.jpg" alt="2">
+    </div>
     
-<section>
-<div class = "imgBx">
-    <img src="image/2.jpg" alt="football pitch background">
-</div>
-<div class="contextBx">
-    <div class="formBx">
-        <h2>Login</h2>
-        <form action="includes/login.inc.php" method="post">
-            <div class="inputBx">
+    <div class="loginSecondBx">
+    
+            <div class="authenthicationError">
+                <?php
+                    echo $error;
+                ?>
+            </div>
+
+            <div class="usernameLogin">
                 <span>Username</span>
                 <input type="text" name="mailuid" placeholder="Username">
             </div>
-            <div class="inputBx">
+
+            <div class="passwordLogin">
                 <span>Password</span>
                 <input type="password" name="pwd" placeholder="Password">
             </div>
-            <div class="inputBx">
+
+            <div class="loginSubmitBx">
             <button type="submit" name="login-submit">Login</button>
             </div>
-            <div class="inputBx">
+
+            <div class="redirectToSignup">
             <p>ไม่มีบัญชี? <a href="signup.php">สมัครโลด</a></p> 
             </div>
+
         </form>
     </div>
 </div>
 
-</section>
-
-
 </main>
 
 <?php
-require "footer.php";
     }
 ?>

@@ -4,19 +4,12 @@ require "navbar.php";
 if (isset($_SESSION['userUid'])) {
     header("Location: index.php");
 } else{
-
+    $error = '';
 ?>
 
 <main>
 
-            
-<section>
-<div class = "imgBx">
-    <img src="image/2.jpg" alt="football pitch background">
-</div>
-<div class="contextBx">
-    <div class="formBx">
-        <h2>Sign up</h2>
+
         <?php
                 if (isset($_GET['error'])) {
                     if ($_GET['error'] == "emptyfields") {
@@ -34,8 +27,25 @@ if (isset($_SESSION['userUid'])) {
                     }
                 }
                 ?>
-        <form action="includes/signup.inc.php" method="post">
-            <div class="inputBx">
+
+<form action="includes/signup.inc.php" method="post">
+<div class="authenticationWrapper">
+
+    <div class="authenticationLogo">
+        <img src="image/default profile pic.jpg" alt="2">
+    </div>
+
+
+    <div class="signupSecondBx">
+
+
+    <div class="authenthicationError">
+                <?php
+                    echo $error;
+                ?>
+            </div>
+
+            <div class="usernameSignup">
             <?php
                     if (isset($_GET['uid'])) {
                         $uid = $_GET['uid'];
@@ -46,7 +56,8 @@ if (isset($_SESSION['userUid'])) {
                         echo '<input type="text" name="uid" placeholder="Username" maxlength="16">';
             ?>
             </div>
-            <div class="inputBx">
+
+            <div class="emailSignup">
                 <?php
                     }
                     if (isset($_GET['mail'])) {
@@ -59,27 +70,25 @@ if (isset($_SESSION['userUid'])) {
                     }
                     ?>
             </div>
-            <div class="inputBx">
+            <div class="passwordSignup">
                 <span>Password</span>
                 <input type="Password" name="pwd" placeholder="Password">
             </div>
-            <div class="inputBx">
+            <div class="confirmPasswordSignup">
                 <span>Confirm Password</span>
                 <input type="Password" name="pwd-repeat" placeholder="Confirm Password">
             </div>
-            <div class="inputBx">
+            <div class="signupSubmit">
             <button type="submit" name="signup-submit">Signup</button>
             </div>
+
+            <div class="redirectToLogin">
+            <p>มีบัญชีแล้ว? <a href="login.php">เข้าสู่ระบบ</a></p> 
+            </div>
         </form>
-    </div>
-</div>
-
-</section>
-
-
+</div></div>
 </main>
 
 <?php
-require "footer.php";
-                }
+}
 ?>

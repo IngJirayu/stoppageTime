@@ -17,8 +17,9 @@ if (isset($_SESSION['userUid'])) {
 
 <form action="includes/login.inc.php" method="post">
 <div class="authenticationWrapper">
+
     <div class="authenticationLogo">
-        <img src="image/default profile pic.jpg" alt="2">
+        <img class="logoAuthenticate" src="image/logoDesign(Blue).png" alt="logo">
     </div>
     
     <div class="loginSecondBx">
@@ -30,12 +31,12 @@ if (isset($_SESSION['userUid'])) {
             </div>
 
             <div class="usernameLogin">
-                <span>Username</span>
+                <span>Username</span> <br>
                 <input type="text" name="mailuid" placeholder="Username">
             </div>
 
             <div class="passwordLogin">
-                <span>Password</span>
+                <span>Password</span> <br>
                 <input type="password" name="pwd" placeholder="Password">
             </div>
 

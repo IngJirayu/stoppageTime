@@ -32,7 +32,7 @@ if (isset($_SESSION['userUid'])) {
 <div class="authenticationWrapper">
 
     <div class="authenticationLogo">
-        <img src="image/default profile pic.jpg" alt="2">
+        <img class="logoAuthenticate" src="image/logoDesign(Blue).png" alt="logo">
     </div>
 
 
@@ -49,10 +49,10 @@ if (isset($_SESSION['userUid'])) {
             <?php
                     if (isset($_GET['uid'])) {
                         $uid = $_GET['uid'];
-                        echo '<span>Username</span>';
+                        echo '<span>Username</span><br>';
                         echo '<input type="text" name="uid" placeholder="Username" maxlength="16" value="' . $uid . '">';
                     } else {
-                        echo '<span>Username</span>';
+                        echo '<span>Username</span><br>';
                         echo '<input type="text" name="uid" placeholder="Username" maxlength="16">';
             ?>
             </div>
@@ -62,20 +62,20 @@ if (isset($_SESSION['userUid'])) {
                     }
                     if (isset($_GET['mail'])) {
                         $mail = $_GET['mail'];
-                        echo '<span>Email</span>';
+                        echo '<span>Email</span><br>';
                         echo '<input type="text" name="mail" placeholder="Email" value="' . $mail . '">';
                     } else {
-                        echo '<span>Email</span>';
+                        echo '<span>Email</span><br>';
                         echo '<input type="text" name="mail" placeholder="Email">';
                     }
                     ?>
             </div>
             <div class="passwordSignup">
-                <span>Password</span>
+                <span>Password</span><br>
                 <input type="Password" name="pwd" placeholder="Password">
             </div>
             <div class="confirmPasswordSignup">
-                <span>Confirm Password</span>
+                <span>Confirm Password</span><br>
                 <input type="Password" name="pwd-repeat" placeholder="Confirm Password">
             </div>
             <div class="signupSubmit">

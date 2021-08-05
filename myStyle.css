@@ -143,8 +143,7 @@ body {
     grid-column: 3/4;
     grid-row: 2/3;
     display: grid;
-    grid-template-rows: repeat(5, 30px);
-    background-color: rgb(0, 58, 112);
+    grid-template-rows: repeat(5, 50px);
 }
 .authenthicationError{
     grid-row: 1/2;
@@ -163,13 +162,17 @@ body {
     grid-row: 5/6;
 }
 
+.logoAuthenticate{
+    width: 250px;
+    height: auto;
+}
+
 /* sign up*/
 .signupSecondBx{
     grid-column: 3/4;
     grid-row: 2/3;
     display: grid;
-    grid-template-rows: repeat(7, 30px);
-    background-color: rgb(0, 58, 112);
+    grid-template-rows: repeat(7, 50px);
 }
 .usernameSignup{
     grid-row: 2/3;
@@ -188,6 +191,32 @@ body {
 }
 .redirectToLogin{
     grid-row: 7/8;
+}
+
+@media (max-width: 48em){
+    .authenticationWrapper{
+        display: grid;
+        grid-template-columns: 1fr 5fr 1fr;
+        grid-template-rows: 250px auto;
+    }
+
+    .logoAuthenticate{
+        width: 100%;
+        height: auto;
+        opacity: 0.5;
+    }
+    .authenticationLogo{
+        grid-column: 2/3;
+        grid-row: 1/2;
+    }
+    .loginSecondBx{
+        grid-column: 2/3;
+        grid-row: 2/3;
+    }
+    .signupSecondBx{
+        grid-column: 2/3;
+        grid-row: 2/3;
+    }
 }
 
 /*Profile*/
@@ -276,12 +305,17 @@ a.linkToPost:hover{
     text-decoration: underline;
 }
 button.logoutButton{
-    background-color: white;
+    background-color: white; 
+    color: black; 
+    border: 2px solid black;
+    width: 100%;
+    height: 50px;
 }
 button.logoutButton:hover{
-    background-color: rgb(160, 160, 160);
-    color: black;
+    background-color: #f44336;
+    color: white;
 }
+
 
 @media (max-width: 48em){
     .wrapper{
@@ -545,7 +579,6 @@ input[type="checkbox"]:checked + span {
     grid-row: 4/5;
     justify-self: end;
 }
-
 
 .showMoreButton{
     margin-top: 10px;

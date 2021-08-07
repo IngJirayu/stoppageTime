@@ -31,10 +31,6 @@ if (isset($_SESSION['userUid'])) {
 <form action="includes/signup.inc.php" method="post">
 <div class="authenticationWrapper">
 
-    <div class="authenticationLogo">
-        <img class="logoAuthenticate" src="image/logoDesign(Blue).png" alt="logo">
-    </div>
-
 
     <div class="signupSecondBx">
 
@@ -46,40 +42,54 @@ if (isset($_SESSION['userUid'])) {
             </div>
 
             <div class="usernameSignup">
+                <span>Username</span>
+            </div> 
+
             <?php
                     if (isset($_GET['uid'])) {
                         $uid = $_GET['uid'];
-                        echo '<span>Username</span><br>';
-                        echo '<input type="text" name="uid" placeholder="Username" maxlength="16" value="' . $uid . '">';
+                        echo '<div class="usernameSignupInput"><input class="authenticateInput" type="text" name="uid" placeholder="Username" maxlength="16" value="' . $uid . '"></div>';
                     } else {
-                        echo '<span>Username</span><br>';
-                        echo '<input type="text" name="uid" placeholder="Username" maxlength="16">';
+                        echo '<div class="usernameSignupInput"><input class="authenticateInput" type="text" name="uid" placeholder="Username" maxlength="16"></div>';
             ?>
-            </div>
+            
 
             <div class="emailSignup">
+                <span>Email</span>
+            </div>    
                 <?php
                     }
                     if (isset($_GET['mail'])) {
                         $mail = $_GET['mail'];
-                        echo '<span>Email</span><br>';
-                        echo '<input type="text" name="mail" placeholder="Email" value="' . $mail . '">';
+                        echo '<div class="emailSignupInput"><input class="authenticateInput" type="text" name="mail" placeholder="Email" value="' . $mail . '"></div>';
                     } else {
-                        echo '<span>Email</span><br>';
-                        echo '<input type="text" name="mail" placeholder="Email">';
+                        echo '<div class="emailSignupInput"><input class="authenticateInput" type="text" name="mail" placeholder="Email"></div>';
                     }
                     ?>
-            </div>
+            
             <div class="passwordSignup">
-                <span>Password</span><br>
-                <input type="Password" name="pwd" placeholder="Password">
+                <span>Password</span>
             </div>
+
+            <div class="passwordSignupInput">
+                <input class="authenticateInput" type="Password" name="pwd" placeholder="Password">
+            </div>
+
             <div class="confirmPasswordSignup">
-                <span>Confirm Password</span><br>
-                <input type="Password" name="pwd-repeat" placeholder="Confirm Password">
+                <span>Confirm Password</span>
             </div>
+
+            <div class="confirmPasswordSignupInput">
+                <input class="authenticateInput" type="Password" name="pwd-repeat" placeholder="Confirm Password">
+            </div>
+
             <div class="signupSubmit">
-            <button type="submit" name="signup-submit">Signup</button>
+            <input type="checkbox" onchange="document.getElementById('signup-submit').disabled = !this.checked;">
+            ฉันได้อ่านและยอมรับ<a href="termsAndServices.php">เงื่อนไขและข้อตกลง</a>ของเว็ปไซต์แล้ว
+            </div>
+
+            <div class="signupSubmitButton">
+                <button class="authenticateButton" type="submit" disabled="disabled" name="signup-submit" id="signup-submit">Signup</button>
             </div>
 
             <div class="redirectToLogin">

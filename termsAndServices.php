@@ -6,7 +6,7 @@
 <div class="announcementWrapper">
     <div class="announcementSecondWrapper">
         <div class="announcementHeader">
-           กฏของเรา!
+           Terms and Services
         </div>  
         <div class="announcementText"> 
         ยินดีต้อนรับคอบอลทุกท่านเข้าสู่เว็ป stoppage time! 

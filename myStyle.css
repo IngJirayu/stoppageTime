@@ -12,8 +12,6 @@ button{
 body {
     z-index: -1;
     background: rgb(235, 235, 235);
-    /*background-image: url("image/3.jpg");
-    backdrop-filter: blur(10px);*/
 }
 .header a{
     color: rgb(255, 255, 255);
@@ -133,32 +131,61 @@ body {
 .authenticationWrapper{
     display: grid;
     grid-template-columns: 1fr 1.2fr 1.2fr 1fr;
-    grid-template-rows: 250px auto;
+    grid-template-rows: 25vh auto 50vh;
+    background-image: url("image/logoDesign\(Blue\).png");
+    background-repeat: repeat;
+    background-size: 50vh 50vh;
 }
-.authenticationLogo{
-    grid-column: 2/3; 
-    grid-row: 2/3;
-}
+
 .loginSecondBx{
-    grid-column: 3/4;
+    grid-column: 2/4;
     grid-row: 2/3;
     display: grid;
     grid-template-rows: repeat(5, 50px);
+    grid-template-columns: 0.2fr 0.5fr 1fr 1fr 1fr 0.5fr 0.2fr;
+    box-shadow: 1px 0px 5px 3px rgba(39, 39, 39, 0.75);
+    background-color: rgb(240, 240, 240);
+    grid-gap: 10px;
 }
 .authenthicationError{
+    grid-column: 3/6;
     grid-row: 1/2;
     color: red;
+    align-self: center;
+    justify-self: center;
 }
 .usernameLogin{
+    grid-column: 2/3;
     grid-row: 2/3;
+    align-self: center;
+}
+.usernameLoginInput{
+    grid-column: 3/6;
+    grid-row: 2/3;
+    align-self: center;
 }
 .passwordLogin{
+    grid-column: 2/3;
     grid-row: 3/4;
+    align-self: center;
+}
+.passwordLoginInput{
+    grid-column: 3/6;
+    grid-row: 3/4;
+    align-self: center;
 }
 .loginSubmitBx{
+    grid-column: 3/6;
     grid-row: 4/5;
+    
+}
+.authenticateButton{
+    width: 100%;
+    height: 50%;
+
 }
 .redirectToSignup{
+    grid-column: 3/6;
     grid-row: 5/6;
 }
 
@@ -166,31 +193,74 @@ body {
     width: 250px;
     height: auto;
 }
+.authenticateInput{
+    width: 100%;
+    padding: 12px 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
 
 /* sign up*/
 .signupSecondBx{
-    grid-column: 3/4;
+    grid-column: 2/4;
     grid-row: 2/3;
     display: grid;
-    grid-template-rows: repeat(7, 50px);
+    grid-template-columns: 0.2fr 0.5fr 1fr 1fr 1fr 0.5fr 0.2fr;
+    grid-template-rows: repeat(8, 50px);
+    box-shadow: 1px 0px 5px 3px rgba(39, 39, 39, 0.75);
+    background-color: rgb(240, 240, 240);
 }
 .usernameSignup{
+    grid-column: 2/3;
     grid-row: 2/3;
+    align-self: center;
+}
+.usernameSignupInput{
+    grid-column: 3/6;
+    grid-row: 2/3;
+    align-self: center;
 }
 .emailSignup{
+    grid-column: 2/3;
     grid-row: 3/4;
+    align-self: center;
+}
+.emailSignupInput{
+    grid-column: 3/6;
+    grid-row: 3/4;
+    align-self: center;
 }
 .passwordSignup{
+    grid-column: 2/3;
     grid-row: 4/5;
+    align-self: center;
+}
+.passwordSignupInput{
+    grid-column: 3/6;
+    grid-row: 4/5;
+    align-self: center;
 }
 .confirmPasswordSignup{
+    grid-column: 2/3;
     grid-row: 5/6;
+    align-self: center;
+}
+.confirmPasswordSignupInput{
+    grid-column: 3/6;
+    grid-row: 5/6;
+    align-self: center;
 }
 .signupSubmit{
+    grid-column: 3/6;
     grid-row: 6/7;
 }
-.redirectToLogin{
+.signupSubmitButton{
+    grid-column: 3/6;
     grid-row: 7/8;
+}
+.redirectToLogin{
+    grid-column: 3/6;
+    grid-row: 8/9;
 }
 
 @media (max-width: 48em){

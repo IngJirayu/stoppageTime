@@ -135,7 +135,7 @@ if (isset($_SESSION['userUid'])) {
         </label>
         </div>
       <div class="submitBx">
-        <button class="logoutButton" type="submit" name="new-topic-submit">Post</button>
+        <button class="makePostButton" type="submit" name="new-topic-submit">Post</button>
       </div>
 
       </form>

@@ -12,8 +12,26 @@ if (isset($_SESSION['userUid'])) {
         $error = ' ';
         if (isset($_GET['signup']) == "success") {
             $error = "สมัครสมาชิกเรียบร้อยแล้ว เข้าสู่ระบบได้เลย!!!";
-        } else if (isset($_GET['error']) == "emptyfields") {
-            $error = "โปรดใส่ข้อมูลให้ครบทุกช่อง";
+        } else if (isset($_GET['error'])) {
+            switch ($_GET['error']) {
+                case 'emptyfields':
+                    $error = 'ใส่ข้อมูลไม่ครบจ้า';
+                    break;
+                case 'sqlerror':
+                    $error = 'ไม่สามารถเชื่อมต่อกับฐานข้อมูลได้ โปรดลองใหม่ภายหลัง';
+                    break;
+                case 'wrongpwd':
+                    $error = 'รหัสผ่านไม่ถูกต้อง';
+                    break;
+                case 'nouser':
+                    $error = 'ไม่มีชื่อผู้ใช้';
+                    break;
+                    
+                default:
+                    $error = 'ถ้าเห็นข้อความนี้ โปรดแจ้งแอดมินด้วยครับ';
+                    break;
+            }
+            
         }
         ?>
 

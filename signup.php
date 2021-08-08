@@ -9,21 +9,28 @@ if (isset($_SESSION['userUid'])) {
 
 <main>
 
-
         <?php
                 if (isset($_GET['error'])) {
-                    if ($_GET['error'] == "emptyfields") {
-                        echo '<p> Fill in all fields!</p>';
-                    } elseif ($_GET['error'] == "invaliduidmail") {
-                        echo '<p> Invalid Username and Email!</p>';
-                    } elseif ($_GET['error'] == "invaliduid") {
-                        echo '<p> Invalid Username!</p>';
-                    } elseif ($_GET['error'] == "invalidmail") {
-                        echo '<p> Invalid E-mail!</p>';
-                    } elseif ($_GET['error'] == "passwordcheck") {
-                        echo '<p> Password do not match!</p>';
-                    } elseif ($_GET['error'] == "usertaken") {
-                        echo '<p> Username already taken!</p>';
+                    switch ($_GET['error']) {
+                        case 'emptyfields':
+                            $error = 'โปรดกรอกให้ครบทุกช่อง';
+                            break;
+                        case 'invaliduidmail':
+                            $error = 'อีเมลไม่ถูกต้อง';
+                            break;
+                        case 'passwordcheck':
+                            $error = 'รหัสผ่านไม่ตรงกัน';
+                            break;
+                        case 'sqlerror':
+                            $error = 'ไม่สามารถเชื่อมต่อกับฐานข้อมูลได้ โปรดลองใหม่ภายหลัง';
+                            break;
+                        case 'usertaken':
+                            $error = 'ชื่อผู้ใช้ซ้ำคนอื่นน่ะ';
+                            break;
+                        
+                        default:
+                            $error = 'ถ้าเห็นข้อความนี้ โปรดแจ้งแอดมินด้วยครับ';
+                            break;
                     }
                 }
                 ?>
@@ -54,15 +61,19 @@ if (isset($_SESSION['userUid'])) {
             ?>
             
 
-            <div class="emailSignup">
-                <span>Email</span>
-            </div>    
                 <?php
                     }
                     if (isset($_GET['mail'])) {
                         $mail = $_GET['mail'];
+                        echo '<div class="emailSignup">
+                                <span>Email</span>
+                              </div>';
+
                         echo '<div class="emailSignupInput"><input class="authenticateInput" type="text" name="mail" placeholder="Email" value="' . $mail . '"></div>';
                     } else {
+                        echo '<div class="emailSignup">
+                                <span>Email</span>
+                              </div>';
                         echo '<div class="emailSignupInput"><input class="authenticateInput" type="text" name="mail" placeholder="Email"></div>';
                     }
                     ?>

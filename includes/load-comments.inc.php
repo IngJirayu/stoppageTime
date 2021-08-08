@@ -52,11 +52,11 @@ $count = 0;
       }
       if ($count == $rowCount) {
         echo '<div class="hiddenShowMoreButton">
-      <button>ดูคอมเม้นเพิ่มเติม</button> </div>';
+        <button class="showMoreCommentButton">ดูคอมเม้นเพิ่มเติม</button> </div>';
       }
       else{
       echo '<div class="showMoreButton">
-      <button>ดูคอมเม้นเพิ่มเติม</button> </div>';
+      <button class="showMoreCommentButton">ดูคอมเม้นเพิ่มเติม</button> </div>';
       }
       
     } 

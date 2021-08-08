@@ -94,17 +94,17 @@ $count = 0;
       }
       if ($count < 25) {
         echo '<div class="hiddenShowMoreButton">
-          <button>ดูคอมเม้นเพิ่มเติม</button> </div>';
+        <button class="showMoreCommentButton">ดูคอมเม้นเพิ่มเติม</button> </div>';
       } else{
         echo '<div class="showMoreButton">
-          <button>ดูคอมเม้นเพิ่มเติม</button> </div>';
+        <button class="showMoreCommentButton">ดูคอมเม้นเพิ่มเติม</button> </div>';
       }
       
 
     } else {
       echo '<div class="noCommentYet"> No Comment </div>';
       echo '<div class="hiddenShowMoreButton">
-      <button>ดูคอมเม้นเพิ่มเติม</button> </div>';
+      <button class="showMoreCommentButton">ดูคอมเม้นเพิ่มเติม</button> </div>';
     }
     ?>
 
@@ -136,7 +136,7 @@ $count = 0;
     <form action="includes/comment.inc.php" method="post">
       comment:<textarea name="comment" rows="10" cols="40"></textarea>
       <input type='hidden' name='qid' value='<?php echo "$qid"; ?>' />
-      <button type="submit" name="comment-submit">Post</button>
+      <button class="postCommentButton" type="submit" name="comment-submit">Post</button>
     </form>
 
   <?php }

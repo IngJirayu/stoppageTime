@@ -96,7 +96,7 @@ if (isset($_SESSION['userUid'])) {
 
             <div class="signupSubmit">
             <input type="checkbox" onchange="document.getElementById('signup-submit').disabled = !this.checked;">
-            ฉันได้อ่านและยอมรับ<a href="termsAndServices.php">เงื่อนไขและข้อตกลง</a>ของเว็ปไซต์แล้ว
+            ฉันได้อ่านและยอมรับ<a href="termsAndServices.php">เงื่อนไขและข้อตกลง</a>แล้ว
             </div>
 
             <div class="signupSubmitButton">

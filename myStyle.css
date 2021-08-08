@@ -266,26 +266,34 @@ body {
 @media (max-width: 48em){
     .authenticationWrapper{
         display: grid;
-        grid-template-columns: 1fr 5fr 1fr;
-        grid-template-rows: 250px auto;
+        grid-template-columns: 0.3fr 5fr 0.3fr;
+        grid-template-rows: 60px auto 50vh;
+    }
+    .authenthicationError{
+        font-size: smaller;
+        grid-column: 2/6;
     }
 
-    .logoAuthenticate{
-        width: 100%;
-        height: auto;
-        opacity: 0.5;
-    }
-    .authenticationLogo{
-        grid-column: 2/3;
-        grid-row: 1/2;
-    }
     .loginSecondBx{
         grid-column: 2/3;
         grid-row: 2/3;
+        grid-template-columns: 0.1fr 1fr 1fr 1fr 1fr 0.1fr;
+    }
+    .loginSubmitBx{
+        grid-column: 2/6;
     }
     .signupSecondBx{
         grid-column: 2/3;
         grid-row: 2/3;
+        grid-template-columns: 0.1fr 1fr 1fr 1fr 1fr 0.1fr;
+    }
+    .signupSubmit{
+        font-size: smaller;
+        grid-column: 2/6;
+        align-self: center;
+    }
+    .signupSubmitButton{
+        grid-column: 2/6;
     }
 }
 

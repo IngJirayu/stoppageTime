@@ -1,5 +1,5 @@
 <nav class="header">
-    <a href="index.php" class="logo">StoppageTime</a>
+    <a href="index.php" class="logo">Tod Vela</a>
     <input class="menu-btn" type="checkbox" id="menu-btn"/>
     <label class="menu-icon" for="menu-btn"><span class="nav-icon"></span></label>
     <ul class="menu">

@@ -8,7 +8,7 @@
 <div class="indexWrapper">
 
 <div class="indexPageTopAd">
-  ads
+  พื้นที่โฆษณา <a href="contactUs.php">ติดต่อเรา!</a>
 </div>
 
 <div class="announcement">

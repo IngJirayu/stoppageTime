@@ -32,7 +32,7 @@ if (isset($_POST['comment-submit'])) {
     }}
 
 } else {
-    header("Location: ../viewtopic.php?qid=" .$_POST['qid']. "error=failedtocomment");
+    header("Location: ../index.php");
     exit();
     
 

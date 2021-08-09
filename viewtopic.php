@@ -54,7 +54,7 @@ $count = 0;
     </div>
 
     <div class="viewTopicAd">
-      ads
+    พื้นที่โฆษณา <a href="contactUs.php">ติดต่อเรา!</a>
     </div>
 
 

@@ -7,7 +7,7 @@ require "navbar.php";
 
 <!-- ads upto 110px high-->
 <div class="tagPageTopAd">
-    ads
+พื้นที่โฆษณา <a href="contactUs.php">ติดต่อเรา!</a>
 </div>
 
 <div class="allTags">

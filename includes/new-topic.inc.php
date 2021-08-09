@@ -62,6 +62,6 @@ if (isset($_POST['new-topic-submit'])) {
 
 
 } else {
-    header("Location: ../new-topic.php?error=serverfailed");
+    header("Location: ../index.php");
     exit();
 }

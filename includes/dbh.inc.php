@@ -1,10 +1,10 @@
 <?php
 
 $servername = "localhost";
-$dBUsername = "u719676823_ingJirayu";
-$dBPassword = "BornSinceNovember21";
+$dBUsername = "root";
+$dBPassword = "";
 // name of databse
-$dBName = "u719676823_todVela";
+$dBName = "stoppageTime";
 
 $conn = mysqli_connect($servername, $dBUsername, $dBPassword, $dBName);
 

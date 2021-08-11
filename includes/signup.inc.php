@@ -13,7 +13,7 @@ if (isset($_POST['signup-submit'])) {
         exit();
     }
     //check for invalid email and username
-    elseif (!filter_var($email, FILTER_VALIDATE_EMAIL) && !preg_match("/^[a-zA-Z0-9]*$/", $username)) {
+    elseif (!filter_var($email, FILTER_VALIDATE_EMAIL) && !preg_match('/^[\w-]+$/', $username)) {
         header("Location: ../signup.php?error=invaliduidmail");
         exit();
     }
@@ -23,7 +23,7 @@ if (isset($_POST['signup-submit'])) {
         exit();
     }
     //check for valid username
-    elseif (!preg_match("/^[a-zA-Z0-9]*$/", $username)) {
+    elseif (!preg_match('/^[\w-]+$/', $username)) {
         header("Location: ../signup.php?error=invaliduid&mail=".$email);
         exit();
     }
@@ -44,9 +44,9 @@ if (isset($_POST['signup-submit'])) {
         else {
             mysqli_stmt_bind_param($stmt, "s", $username);
             mysqli_stmt_execute($stmt);
-            mysqli_stmt_store_result($stmt);
-            $resultCheck = mysqli_stmt_num_rows($stmt);
-            if ($resultCheck > 0) {
+            $result = mysqli_stmt_get_result($stmt);
+            $row = mysqli_fetch_assoc($result);
+            if (strtolower($row['uidUsers']) == strtolower($username)) {
                 header("Location: ../signup.php?error=usertaken&mail=".$email);
                 exit();
             } //insert data

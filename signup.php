@@ -15,7 +15,7 @@ if (isset($_SESSION['userUid'])) {
                         case 'emptyfields':
                             $error = 'โปรดกรอกให้ครบทุกช่อง';
                             break;
-                        case 'invaliduidmail':
+                        case 'invalidmail':
                             $error = 'อีเมลไม่ถูกต้อง';
                             break;
                         case 'passwordcheck':
@@ -27,7 +27,9 @@ if (isset($_SESSION['userUid'])) {
                         case 'usertaken':
                             $error = 'ชื่อผู้ใช้ซ้ำคนอื่นน่ะ';
                             break;
-                        
+                        case 'invaliduid':
+                            $error = 'ชื่อผู้ใช้ต้องเป็นภาษาอังกฤษ และห้ามมีช่องว่างหรืออักษรพิเศษ';
+                            break;
                         default:
                             $error = 'ถ้าเห็นข้อความนี้ โปรดแจ้งแอดมินด้วยครับ';
                             break;
